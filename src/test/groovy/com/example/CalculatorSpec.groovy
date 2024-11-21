@@ -3,44 +3,31 @@ package com.example
 import spock.lang.Specification
 
 class CalculatorSpec extends Specification {
-    def "addition works"() {
-        given:
-        def calc = new Calculator()
+    def calculator = new Calculator()
 
+    def "addition test"() {
         expect:
-        calc.add(2, 3) == 5
+        calculator.add(1, 2) == 3
     }
 
-    def "subtraction works"() {
-        given:
-        def calc = new Calculator()
-
+    def "subtraction test"() {
         expect:
-        calc.subtract(3, 2) == 1
+        calculator.subtract(5, 3) == 2
     }
 
-    def "multiplication works"() {
-        given:
-        def calc = new Calculator()
-
+    def "multiplication test"() {
         expect:
-        calc.multiply(2, 3) == 6
+        calculator.multiply(2, 3) == 6
     }
 
-    def "division works"() {
-        given:
-        def calc = new Calculator()
-
+    def "division test"() {
         expect:
-        calc.divide(6, 3) == 2
+        calculator.divide(6, 2) == 3
     }
 
-    def "division by zero throws exception"() {
-        given:
-        def calc = new Calculator()
-
+    def "division by zero test"() {
         when:
-        calc.divide(1, 0)
+        calculator.divide(1, 0)
 
         then:
         thrown(IllegalArgumentException)
