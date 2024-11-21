@@ -20,6 +20,10 @@ class Calculator {
         return a / b
     }
 
+    int max(int a, int b) {
+        return a > b ? a : b
+    }
+    
     int factorial(int n) {
         if (n == 0) {
             return 1
