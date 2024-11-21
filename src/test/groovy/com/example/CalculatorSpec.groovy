@@ -5,6 +5,7 @@ import spock.lang.Specification
 class CalculatorSpec extends Specification {
     def calculator = new Calculator()
 
+    // Statement Coverage
     def "addition test"() {
         expect:
         calculator.add(1, 2) == 3
@@ -31,5 +32,21 @@ class CalculatorSpec extends Specification {
 
         then:
         thrown(IllegalArgumentException)
+    }
+
+    // Branch Coverage
+    def "division by zero test"() {
+        when:
+        example.divide(1, 0)
+
+        then:
+        thrown(IllegalArgumentException)
+    }
+
+    // Path Coverage
+    def "max test"() {
+        expect:
+        calculator.max(1, 2) == 2
+        calculator.max(3, 2) == 3
     }
 }
