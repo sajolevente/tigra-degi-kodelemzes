@@ -37,7 +37,7 @@ class CalculatorSpec extends Specification {
     // Branch Coverage
     def "division by zero test"() {
         when:
-        example.divide(1, 0)
+        calculator.divide(1, 0)
 
         then:
         thrown(IllegalArgumentException)
