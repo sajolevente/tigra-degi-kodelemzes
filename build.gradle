@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:4.0.21'
+    implementation 'org.apache.groovy:groovy-all:4.0.24'
     testImplementation 'org.spockframework:spock-core:2.4-M2-groovy-4.0'
 }
 
