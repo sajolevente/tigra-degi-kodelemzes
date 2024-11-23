@@ -28,6 +28,12 @@ jobs:
     - name: Static Code Analysis
       run: gradle check
 
+    - name: Upload JaCoCo report
+      uses: actions/upload-artifact@v3
+      with:
+        name: jacoco-report
+        path: build/reports/jacoco/test/html
+        
     - name: Check coverage
       run: |
         COVERAGE=$(grep -oP 'Total.*?(\d+)%' build/reports/jacoco/test/html/index.html | grep -oP '\d+')
