@@ -20,13 +20,13 @@ jobs:
       uses: gradle/gradle-build-action@v2
           
     - name: Build with Gradle
-      run: ./gradlew build
+      run: gradle build
       
     - name: Run tests
-      run: ./gradlew test
+      run: gradle test
       
     - name: Code Coverage
-      run: ./gradlew jacocoTestReport
+      run: gradle jacocoTestReport
       
     - name: Static Code Analysis
-      run: ./gradlew check
+      run: gradle check
