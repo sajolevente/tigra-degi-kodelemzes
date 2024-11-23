@@ -8,8 +8,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
-    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+    implementation 'org.codehaus.groovy:groovy-all:4.0.21'
+    testImplementation 'org.spockframework:spock-core:2.4-M2-groovy-4.0'
 }
 
 test {
