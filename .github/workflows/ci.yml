@@ -27,3 +27,11 @@ jobs:
       
     - name: Static Code Analysis
       run: gradle check
+
+    - name: Check coverage
+      run: |
+        COVERAGE=$(grep -oP 'Total.*?(\d+)%' build/reports/jacoco/test/html/index.html | grep -oP '\d+')
+        if [ "$COVERAGE" -lt 100 ]; then
+          echo "Test coverage is below 100%. Current coverage: $COVERAGE%"
+          exit 1
+        fi
