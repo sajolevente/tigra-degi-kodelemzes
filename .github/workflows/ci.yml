@@ -17,15 +17,7 @@ jobs:
         java-version: '21'
 
     - name: Set up Gradle
-      uses: gradle/gradle-build-action@v2
-      
-    - name: Cache Gradle packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+      uses: gradle/actions/setup-gradle@v3
           
     - name: Build with Gradle
       run: ./gradlew build
@@ -36,10 +28,5 @@ jobs:
     - name: Code Coverage
       run: ./gradlew jacocoTestReport
       
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
-      with:
-        files: 'build/reports/jacoco/test/jacocoTestReport.xml'
-        
     - name: Static Code Analysis
       run: ./gradlew check
